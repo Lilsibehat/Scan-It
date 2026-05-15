@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scan-It 0.1 - Threat Detection Tool</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <h1>🔐 Scan-It</h1>
+                <p>Multi-Threat Detection Tool v0.1</p>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="nav">
+            <button class="nav-btn active" data-tab="url-scan">URL Scan</button>
+            <button class="nav-btn" data-tab="email-scan">Email Scan</button>
+            <button class="nav-btn" data-tab="file-scan">File Scan</button>
+            <button class="nav-btn" data-tab="content-scan">Content Analysis</button>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main">
+            <!-- URL Scan Tab -->
+            <section id="url-scan" class="tab-content active">
+                <div class="card">
+                    <h2>🔍 URL Scan</h2>
+                    <p>Scan URLs for phishing, malware, and scam characteristics</p>
+                    <form class="scan-form" id="url-form">
+                        <input 
+                            type="url" 
+                            placeholder="Enter URL (e.g., https://example.com)" 
+                            required
+                            class="input-field"
+                            id="url-input"
+                        />
+                        <button type="submit" class="btn btn-primary">Scan URL</button>
+                    </form>
+                    <div id="url-results" class="results"></div>
+                </div>
+            </section>
+
+            <!-- Email Scan Tab -->
+            <section id="email-scan" class="tab-content">
+                <div class="card">
+                    <h2>📧 Email Scan</h2>
+                    <p>Analyze emails for scams, phishing, and suspicious content</p>
+                    <form class="scan-form" id="email-form">
+                        <textarea 
+                            placeholder="Paste email content here..." 
+                            required
+                            class="textarea-field"
+                            id="email-input"
+                            rows="8"
+                        ></textarea>
+                        <button type="submit" class="btn btn-primary">Scan Email</button>
+                    </form>
+                    <div id="email-results" class="results"></div>
+                </div>
+            </section>
+
+            <!-- File Scan Tab -->
+            <section id="file-scan" class="tab-content">
+                <div class="card">
+                    <h2>📁 File Scan</h2>
+                    <p>Scan files for malware using VirusTotal API</p>
+                    <form class="scan-form" id="file-form">
+                        <div class="file-upload">
+                            <input 
+                                type="file" 
+                                id="file-input" 
+                                class="file-input"
+                                required
+                            />
+                            <label for="file-input" class="file-label">Choose File</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Scan File</button>
+                    </form>
+                    <div id="file-results" class="results"></div>
+                </div>
+            </section>
+
+            <!-- Content Analysis Tab -->
+            <section id="content-scan" class="tab-content">
+                <div class="card">
+                    <h2>🤖 AI Content Detection</h2>
+                    <p>Detect if content is AI-generated</p>
+                    <form class="scan-form" id="content-form">
+                        <textarea 
+                            placeholder="Paste content to analyze..." 
+                            required
+                            class="textarea-field"
+                            id="content-input"
+                            rows="8"
+                        ></textarea>
+                        <button type="submit" class="btn btn-primary">Analyze Content</button>
+                    </form>
+                    <div id="content-results" class="results"></div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Scan-It v0.1 | Developed for INSA Cyber Talent Challenge 2026</p>
+            <p>⚠️ For educational and authorized security testing purposes only</p>
+        </footer>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
